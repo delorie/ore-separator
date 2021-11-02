@@ -1,0 +1,129 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol";
+	color: white;
+	background-color: #162123;
+}
+
+#logo {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	display: block;
+	width: 5%;
+	border: 1px solid white;
+}
+
+#headline {
+	width: 100%;
+	text-align: center;
+}
+
+.intro {
+	text-align: center;
+	margin: 80px 200px;
+}
+
+#EVEErzTracker01 {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	display: block;
+	width: 35%;
+	border: 1px solid white;
+}
+
+#inputfield {
+	display: block;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 5px solid red;
+}
+
+#setters {
+	display: block;
+	width: fit-content;
+	margin: 10px auto;
+	border: 5px solid red;
+}
+
+.setterTab {
+	margin: 0 auto;
+}
+
+#send {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px 50px;
+	background-color: #ff0000;
+	color: white;
+	border: none;
+}
+
+#send:hover {
+	background-color: #e20000;
+	font-weight: bold;
+}
+
+#send:focus {
+	border: none;
+	background-color: #ff0000;
+}
+
+a {
+	color: #ff0000;
+}
+
+#target {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: stretch;
+	margin: 80px 40px;
+}
+
+.tile {
+	display: flex;
+	flex-direction: column;
+	width: 350px;
+	margin: 10px 5px;
+	background-color: #a09d9d;
+	border: 1px solid white;
+	justify-content: space-between;
+}
+
+.clipboard, .price {
+	display: block;
+	width: 100%;
+	margin-top: 2px;
+	background-color: black;
+	border: none;
+	color: white;
+	height: 80px;
+}
+
+.clipboard:hover, .price:hover {
+	background-color: #2b2b2b;
+	cursor: pointer;
+}
+
+.wait {
+	cursor: wait;
+}
+
+::-moz-selection {
+	background: #565656;
+}
+
+::selection {
+	background: #565656;
+}
+
+.newInfo{
+	color: #ff0000;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+		<script
+			src="https://code.jquery.com/jquery-3.5.1.js"
+			integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+			crossorigin="anonymous"
+		></script>
+		<title>Erztracker</title>
+	</head>
+	<body>
+		<img id="logo" src="logo.png" alt="Logo" />
+		<h1 id="headline">Profire Inc. [PFIN] Erztracker</h1>
+		<h2 id="headline"><a href="#footer">ZUM TOOL</a></h2>
+		<p class="intro">
+			Willkommen zum Erztracker der Profire Inc.. Ziel des Tools ist das
+			Auslesen der Informationen, die EVE Online innerhalb eines
+			Flotten-Verlaufs trackt. Das Tracking beginnt, wenn man der Flotte
+			beitritt. Die Auswertung ist also unabhängig davon, ob davor oder
+			danach (außerhalb der Flotte) bereits gesammelt wurde. Das
+			Flottenlog ist unter dem Hauptmenü (das große E in der Leiste von
+			EVE) unter "SOZIAL" und "FLOTTE" zu finden und sieht so aus:
+		</p>
+		<img
+			id="EVEErzTracker01"
+			src="EVEErzTracker01.JPG"
+			alt="Log-Fenster der Flotte"
+		/>
+		<p class="intro">
+			In dieser Übersicht alle Zeilen mit shift + Klick auswählen, dann in
+			die Zwischenablage kopieren. Anschließend hier in das rote Feld
+			einfügen und Knopf drücken. Die Ergebnisse werden dann in einzelnen
+			Kacheln darunter angezeigt und können für Flottenmitglieder einzeln
+			kopiert und bei
+			<a href="https://evepraisal.com/" target="blank">Evepraisal.com</a>
+			eingegeben werden, um den Wert der Erze zu bekommen.
+			<br /><br /><br />
+			<strong class="newInfo">
+				Achtung: Die maximale Menge eines Erzes darf die Grenze von 2
+				147 483 647 nicht überschreiten, da da das Integer Limit liegt.
+				<br /><br /><br />
+				Neu! Der Wert der Erze kann jetzt automatisch von Evepraisal
+				geholt werden. Hierfür einfach auf den Knopf mit der Aufschrift
+				"Wert" klicken wenn die Kacheln geladen sind.
+			</strong>
+		</p>
+		<textarea name="input" id="inputfield" cols="100" rows="10"></textarea>
+		<div id="setters">
+			<table class="setterTab">
+				<thead>
+					<tr>
+						<th colspan="2">Verkaufsort auswählen</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<input
+								type="radio"
+								name="location"
+								id="jita"
+								value="jita"
+								checked="checked"
+							/>
+						</td>
+						<td><label for="jita">Jita</label></td>
+					</tr>
+					<tr>
+						<td>
+							<input
+								type="radio"
+								name="location"
+								id="amarr"
+								value="amarr"
+							/>
+						</td>
+						<td><label for="amarr">Amarr</label></td>
+					</tr>
+					<tr>
+						<td>
+							<input
+								type="radio"
+								name="location"
+								id="dodixie"
+								value="dodixie"
+							/>
+						</td>
+						<td><label for="dodixie">Dodixie</label></td>
+					</tr>
+					<tr>
+						<td>
+							<input
+								type="radio"
+								name="location"
+								id="rens"
+								value="rens"
+							/>
+						</td>
+						<td><label for="rens">Rens</label></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<button id="send">LAUF FOREST, LAUF!</button>
+		<script src="main.js"></script>
+		<p id="footer" class="intro">&copy 2020 - Derimion</p>
+	</body>
+</html>
