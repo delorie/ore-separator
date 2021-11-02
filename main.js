@@ -7,57 +7,17 @@ let userName = "";
 let oreString = "";
 let locations = document.getElementsByName("location");
 
-// For filtering for Ores only, whitelist of items is provided as array
-let whiteList = [
-	"Veldspar",
-	"Concentrated Veldspar",
-	"Dense Veldspar",
-	"Scordite",
-	"Condensed Scordite",
-	"Massive Scordite",
-	"Pyroxeres",
-	"Solid Pyroxeres",
-	"Viscous Pyroxeres",
-	"Plagioclase",
-	"Azure Plagioclase",
-	"Rich Plagioclase",
-	"Omber",
-	"Silvery Omber",
-	"Golden Omber",
-	"Kernite",
-	"Luminous Kernite",
-	"Fiery Kernite",
-	"Jaspet",
-	"Pure Jaspet",
-	"Pristine Jaspet",
-	"Hemorphite",
-	"Vivid Hemorphite",
-	"Radiant Hemorphite",
-	"Hedbergite",
-	"Vitric Hedbergite",
-	"Glazed Hedbergite",
-	"Gneiss",
-	"Iridescent Gneiss",
-	"Prismatic Gneiss",
-	"Dark Ochre",
-	"Onyx Ochre",
-	"Obsidian Ochre",
-	"Spodumain",
-	"Bright Spodumain",
-	"Gleaming Spodumain",
-	"Crokite",
-	"Sharp Crokite",
-	"Crystalline Crokite",
-	"Arkonor",
-	"Crimson Arkonor",
-	"Prime Arkonor",
-	"Bistot",
-	"Triclinic Bistot",
-	"Monoclinic Bistot",
-	"Mercoxit",
-	"Magma Mercoxit",
-	"Vitreous Mercoxit",
-];
+async function loadSettingFile() {
+	let response = await fetch('/settings.json');
+	 // read response body and parse as JSON
+	return await response.json();
+}
+
+let settings = {};
+
+loadSettingFile().then((result) => {
+	settings = result;
+});
 
 // Add an event listener to the Button "LAUF FOREST, LAUF!"
 sendBtn.addEventListener("click", () => {
@@ -161,7 +121,7 @@ function splitToStr() {
 			let amount = dataArr[index - 1];
 			let allowed = true;
 			// Check if the item in the data array actually is an ore, by comparing against the whitelist
-			if (whiteList.indexOf(ore) === -1) {
+			if (settings.oreWhiteList.indexOf(ore) === -1) {
 				// If it is not, set the switch to false
 				allowed = false;
 			}
