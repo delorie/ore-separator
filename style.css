@@ -81,7 +81,6 @@ a {
 
 #target {
 	display: flex;
-	justify-content: space-between;
 	flex-wrap: wrap;
 	align-items: stretch;
 	margin: 80px 40px;
