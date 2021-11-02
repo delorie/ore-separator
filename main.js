@@ -155,10 +155,13 @@ function buildTiles() {
 	let target = document.createElement("div");
 	target.id = "target";
 
+	data = orderByKeyName(data);
+
 	// Cycle thourgh the data object and start building for each user
 	for (const person in data) {
 		if (data.hasOwnProperty(person)) {
-			const element = data[person];
+			const element = orderByKeyName(data[person]);
+
 			// Build a fresh tile as div element and ID it
 			div = document.createElement("div");
 			div.id = "tile_" + person.replace(" ", "_");
@@ -371,4 +374,14 @@ function doAjax(oreString, market) {
 	});
 	// The request will the yield the appraisal which is returned into the event listener function of the "Wert" button that was clicked
 	return info;
+}
+
+function orderByKeyName(objectWithKeys) {
+	return Object.keys(objectWithKeys).sort().reduce(
+		(obj, key) => {
+			obj[key] = objectWithKeys[key];
+			return obj;
+		},
+		{}
+	);
 }
