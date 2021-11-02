@@ -210,14 +210,14 @@ function buildTiles() {
 			div.appendChild(table);
 
 			// Create a button for getting the ore's worth
-			buttonPrice = document.createElement("button");
+			/*buttonPrice = document.createElement("button");
 			buttonPrice.innerText = "Wert";
 			buttonPrice.id = person;
 			buttonPrice.classList.add("price");
 			// Add an event listener to the ore's worth button which starts the fetchPrices function with the button as argument
 			buttonPrice.addEventListener("click", function () {
 				fetchPrices(this);
-			});
+			});*/
 			// Create a button for copying the table to the clipboard
 			buttonCopy = document.createElement("button");
 			buttonCopy.innerText = "Copy";
@@ -230,7 +230,7 @@ function buildTiles() {
 			// Generate a container for both buttons as kind of control panel
 			let controls = document.createElement("div");
 			// Add the buttons
-			controls.appendChild(buttonPrice);
+			//controls.appendChild(buttonPrice);
 			controls.appendChild(buttonCopy);
 			// Add the control panel to the tile
 			div.appendChild(controls);
