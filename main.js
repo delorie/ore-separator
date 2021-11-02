@@ -193,7 +193,7 @@ function buildTiles() {
 					tr.appendChild(td);
 					// ... and then the amount
 					td = document.createElement("td");
-					txt = document.createTextNode(value);
+					txt = document.createTextNode(value.toLocaleString());
 					td.appendChild(txt);
 					td.style.textAlign = "right";
 					tr.appendChild(td);
