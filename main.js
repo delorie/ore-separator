@@ -8,7 +8,7 @@ let oreString = "";
 let locations = document.getElementsByName("location");
 
 async function loadSettingFile() {
-	let response = await fetch('/settings.json');
+	let response = await fetch('settings.json');
 	 // read response body and parse as JSON
 	return await response.json();
 }
@@ -106,7 +106,6 @@ function splitToStr() {
 			dataArr.push(oreType);
 			// The amount of the ore is one spot before the "x" landmark and needs to be clear of thousands separators
 			amount = inputArr[index - 1].replace(/\./g, "");
-			console.log(amount);
 			// Push the amount as Integer into the data array
 			dataArr.push(parseInt(amount));
 		}
@@ -148,7 +147,7 @@ function splitToStr() {
 // Function to build the result tiles
 function buildTiles() {
 	let body = document.querySelector("body");
-	let div, table, thead, tbody, txt, th, td, tr, buttonCopy, buttonPrice;
+	let div, table, thead, tbody, txt, th, td, tr, buttonCopy, buttonDone;
 	let i = 0;
 
 	// Build the result container with ID "target"
@@ -210,14 +209,21 @@ function buildTiles() {
 			div.appendChild(table);
 
 			// Create a button for getting the ore's worth
-			/*buttonPrice = document.createElement("button");
-			buttonPrice.innerText = "Wert";
-			buttonPrice.id = person;
-			buttonPrice.classList.add("price");
+			buttonDone = document.createElement("button");
+			buttonDone.innerText = "Erledigt";
+			buttonDone.id = person;
+			buttonDone.classList.add("price");
 			// Add an event listener to the ore's worth button which starts the fetchPrices function with the button as argument
-			buttonPrice.addEventListener("click", function () {
-				fetchPrices(this);
-			});*/
+			buttonDone.addEventListener("click", function (div) {
+
+				if (div.style.outlineStyle === '') {
+					div.style.outlineColor = 'green';
+					div.style.outlineWidth = '5px';
+					div.style.outlineStyle = 'solid';
+				} else {
+					div.style.outline = null;
+				}
+			}.bind(null, div));
 			// Create a button for copying the table to the clipboard
 			buttonCopy = document.createElement("button");
 			buttonCopy.innerText = "Copy";
@@ -230,7 +236,7 @@ function buildTiles() {
 			// Generate a container for both buttons as kind of control panel
 			let controls = document.createElement("div");
 			// Add the buttons
-			//controls.appendChild(buttonPrice);
+			controls.appendChild(buttonDone);
 			controls.appendChild(buttonCopy);
 			// Add the control panel to the tile
 			div.appendChild(controls);
